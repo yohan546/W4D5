@@ -25,14 +25,22 @@ def okay_two_sum?(arr, target)
         if sum == target
             return true
         elsif sum < target 
-            left += 1 
+            left += 1 # makes sum bigger
         else
-            right -= 1
+            right -= 1 # makes sum smaller
         end
     end
 
     false
 end
+
+# target = 6
+# [[0],1,5,[7]]
+# 7 > 6
+# [[0],1,[5],7]
+# 5 < 6
+# [0,[1],[5],7]
+# 6 = 6
 
 # arr = [0, 1, 5, 7]
 # p okay_two_sum?(arr, 6) # => should be true
