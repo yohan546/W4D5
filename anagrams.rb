@@ -45,16 +45,21 @@ end
 
 
 def fourth_anagram?(string1, string2)
+    return false if string1.length != string2.length
     hash1 = Hash.new(0)
     # hash2 = Hash.new(0)
 
-    string1.each_char do |char|
-        hash1[char] += 1
+    
+    (0...string1.length).each do |i|
+        hash1[string1[i]] += 1
+        hash1[string2[i]] -= 1
     end
-    string2.each_char do |char|
-        #hash2[char] += 1
-        hash1[char] -= 1
-    end
+
+
+    # string2.each_char do |char|
+    #     #hash2[char] += 1
+    #     hash1[char] -= 1
+    # end
 
     # hash1 == hash2
     hash1.all? { |key, value| value == 0 }
