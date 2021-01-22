@@ -52,12 +52,12 @@ def hash_two_sum?(arr, target)
     hash = Hash.new
 
     arr.each do |ele|
-        return true if hash.has_key?(target - ele) 
+        return true if hash.has_key?(target - ele)
         hash[ele] = 0
     end
 
     false
-end 
+end
 
 # target = 6
 # array = [0,1,5,7]
@@ -65,6 +65,23 @@ end
 
 # {0:0, 1:0, return true}
 
-arr = [0, 1, 5, 7]
-p hash_two_sum?(arr, 6) # => should be true
+# arr = [0, 1, 5, 7]
+# p hash_two_sum?(arr, 6) # => should be true
+
+# ele = 0
+# hash.has_key?(6 - 0) = false
+# hash = {0:0}
+
+# ele = 1
+# hash.has_key?(6 - 1) = false
+# hash{0:0,1:0}
+
+# ele = 5
+# hash.has_key?(6-5) = true 
+# return true
+
+
+
+
+
 p hash_two_sum?(arr, 10) # => should be false
